@@ -1,0 +1,46 @@
+{
+  "animations": [
+    {
+      "animation": "si-video-setup-animations.json",
+      "pageTitle": "Video",
+      "segments": [
+        {
+          "body": "Connect one end of the coax cable to your cable outlet, and the other end to the IN connector on your splitter. Tighten each end using your fingers.",
+          "endFrameIndex": 695,
+          "startFrameIndex": 369,
+          "title": "Connect Coax Cable to Splitter"
+        },
+        {
+          "body": "Connect your devices to the OUT connectors on your splitter. Tighten each end using your fingers.",
+          "endFrameIndex": 986,
+          "startFrameIndex": 696,
+          "title": "Connect Splitter to Devices"
+        },
+        {
+          "body": "Connect one end of the HDMI cable to your receiver, then the other end to an available HDMI port on your TV.",
+          "endFrameIndex": 1367,
+          "startFrameIndex": 1017,
+          "title": "Connect HDMI Cable"
+        },
+        {
+          "body": "<strong>Turn on your TV</strong>, and then select the HDMI source for your receiver using INPUT or SOURCE on your TV or TV remote.",
+          "endFrameIndex": 1525,
+          "startFrameIndex": 1389,
+          "title": "Select HDMI Source"
+        },
+        {
+          "body": "Connect the power cable to your receiver, and plug the other end into an electrical outlet. Your receiver will turn on automatically.",
+          "endFrameIndex": 1881,
+          "startFrameIndex": 1546,
+          "title": "Connect Power Cable"
+        },
+        {
+          "body": "Remove the battery cover from the included remote, and then insert the batteries.",
+          "endFrameIndex": 2116,
+          "startFrameIndex": 1902,
+          "title": "Insert Batteries Into Remote"
+        }
+      ]
+    }
+  ]
+}

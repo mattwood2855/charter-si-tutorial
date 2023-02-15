@@ -7,13 +7,14 @@ import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
 import { LottieComponent } from './lottie/lottie.component';
 import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 export function playerFactory(): any {
   return player;
 }
 
 @NgModule({
-  declarations: [AppComponent, TutorialPageComponent, LottieComponent],
+  declarations: [AppComponent, TutorialPageComponent, LottieComponent, ToolbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,0 +1,38 @@
+<div
+    class="toolbar, gradient"
+    role="banner">
+    <kite-button
+        [shrinkwrap]="true"
+        [variant]="'borderless'"
+        (click)="backClicked()">
+        <kite-icon
+            [icon]="'ki-chevron-left'"
+            [fill]="'rgb(255,255,255)'"
+            [size]="'1em'">
+        </kite-icon>
+    </kite-button> 
+    <span
+        class="title"
+        [textContent]="[title]">
+    </span>
+    <kite-button
+        [shrinkwrap]="true"
+        [variant]="'borderless'"
+        (click)="chatSupportClicked()">
+        <kite-icon
+            [icon]="'ki-chat-support'"
+            [fill]="'rgb(255,255,255)'"
+            [size]="'1em'">
+        </kite-icon>
+    </kite-button> 
+    <kite-button
+        [shrinkwrap]="true"
+        [variant]="'borderless'"
+        (click)="exitClicked()">
+        <kite-icon
+            [icon]="'ki-x'"
+            [fill]="'rgb(255,255,255)'"
+            [size]="'1em'">
+        </kite-icon>
+    </kite-button> 
+</div>

@@ -1,1 +1,12 @@
-<p>tutorial-page works!</p>
+<kite-grid>
+    <kite-grid-cell col="3"/>
+    <kite-grid-cell col="6">
+        <app-toolbar></app-toolbar>
+        <div id="tutorialContent">
+            <app-lottie [lottie]="lottie" [parentSubject]="lottieSubject"></app-lottie>
+        </div>
+    </kite-grid-cell>
+    <kite-grid-cell col="3"/>
+</kite-grid>
+
+

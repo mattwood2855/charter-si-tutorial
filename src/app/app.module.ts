@@ -9,6 +9,7 @@ import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { AngularKiteCoreModule } from '@kite/angular-kite';
+import { TutorialListPageComponent } from './tutorial-list-page/tutorial-list-page.component';
 
 export function playerFactory(): any {
   return player;
@@ -20,6 +21,7 @@ export function playerFactory(): any {
     TutorialPageComponent,
     LottieComponent,
     ToolbarComponent,
+    TutorialListPageComponent,
   ],
   imports: [
     BrowserModule,

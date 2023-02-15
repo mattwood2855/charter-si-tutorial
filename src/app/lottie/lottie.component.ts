@@ -17,6 +17,8 @@ export class LottieComponent implements OnInit {
 
   // Only enabled for playAllSegments
   @Input() interSegmentDuration: number = 0;
+  @Input() height: string;
+  @Input() width: string;
 
   @Output() lottiePaused = new EventEmitter<null>();
   @Output() lottieStopped = new EventEmitter<null>();

@@ -4,12 +4,12 @@ import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
 
 const routes: Routes = [
   {
-    path: 'tutorial',
+    path: 'tutorial/:equipmentType',
     component: TutorialPageComponent,
   },
   {
     path: '',
-    redirectTo: '/tutorial',
+    redirectTo: '/tutorial/video',
     pathMatch: 'full',
   },
 ];

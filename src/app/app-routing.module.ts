@@ -5,7 +5,7 @@ import { TutorialPageComponent } from './tutorial-page/tutorial-page.component';
 
 const routes: Routes = [
   {
-    path: 'tutorial',
+    path: 'tutorials',
     component: TutorialListPageComponent,
   },
   {
@@ -14,12 +14,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/tutorial',
+    redirectTo: '/tutorials',
     pathMatch: 'full',
   },
   {
     path: '**',
-    redirectTo: '/tutorial',
+    redirectTo: '/tutorials',
     pathMatch: 'full',
   },
 ];

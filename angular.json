@@ -20,12 +20,37 @@
             "outputPath": "dist/charter-si-tutorial",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": ["zone.js"],
+            "polyfills": [
+              "zone.js",
+              "wicg-inert/dist/inert.js",
+              "focus-visible"
+            ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": [
+              "src/favicon.ico",
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/@kite/typography/fonts",
+                "output": "/assets/fonts"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@kite/icons/dist/icon-font/fonts",
+                "output": "/assets/fonts"
+              },
+              {
+                "glob": "**/*",
+                "input": "node_modules/@kite/icons/dist",
+                "output": "/assets/icons"
+              }
+            ],
             "styles": ["src/styles.scss"],
-            "scripts": []
+            "scripts": [],
+            "stylePreprocessorOptions": {
+              "includePaths": ["node_modules"]
+            }
           },
           "configurations": {
             "production": {

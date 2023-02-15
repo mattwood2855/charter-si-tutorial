@@ -1,8 +1,30 @@
-.gradient
+.endButtons
 {
-    background-image: linear-gradient(to right, rgb(0,98,178) , rgb(48,158,251));
+    display: flex;
+    float: inline-end;
 }
 .title
 {
     color: rgb(255, 255, 255);
+}
+.toolbarGradient
+{
+    background-image: linear-gradient(to right, rgb(0,98,178) , rgb(48,158,251));
+    display: flex;
+    height: 64px;
+    width: 100%;
+}
+.toolbarGrid
+{
+    width: 100%;
+}
+table
+{ 
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td
+{
+    padding: 0; 
+    margin: 0;
 }

@@ -19,6 +19,8 @@ import { AnimationSegment } from 'lottie-web';
   providers: [SelfInstallTutorialServiceService],
 })
 export class TutorialPageComponent implements OnInit {
+  animationData = null;
+  currentSegment = 0;
   lottie = new AnimationLoading();
   lottieSubject = new Subject<LottieAction>();
   title = '';
@@ -31,10 +33,19 @@ export class TutorialPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.equipment = this.route.snapshot.paramMap.get('equipmentType');
-    var animationData = this.service.getAnimationFor(EquipmentType.Modem);
-    this.lottie = new TutorialAnimation(animationData.animation);
-    this.title = animationData.segments[0].title;
-    this.body = animationData.segments[0].body;
+    this.animationData = this.service.getAnimationFor(EquipmentType.Modem);
+    this.lottie = new TutorialAnimation(this.animationData.animation);
+    this.title = this.animationData.segments[0].title;
+    this.body = this.animationData.segments[0].body;
+  }
+
+  next(): void {
+    if (this.currentSegment < this.animationData.segments.length - 1) {
+      this.currentSegment++;
+      this.lottie = new TutorialAnimation(this.animationData.animation);
+      this.title = this.animationData.segments[this.currentSegment].title;
+      this.body = this.animationData.segments[this.currentSegment].body;
+    }
   }
 }
 

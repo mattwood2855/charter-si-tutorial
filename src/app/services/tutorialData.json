@@ -1,7 +1,7 @@
 {
   "animations": [
     {
-      "animation": "si-video-setup-animations.json",
+      "animation": "assets/si-video-setup-animations.json",
       "pageTitle": "Video",
       "segments": [
         {

@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import * as animationData from './tutorialData.json';
-
-let json = animationData;
-
+import * as tutorialData from './tutorialData.json';
+export type TutorialData = typeof tutorialData;
+export type AnimationData = typeof tutorialData.animations[0];
+let json = tutorialData;
 @Injectable({
   providedIn: 'root',
 })

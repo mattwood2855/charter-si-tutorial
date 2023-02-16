@@ -1,4 +1,17 @@
-#tutorialContent {
+#tutorialAnimation {
   display: flex;
   justify-content: center;
+  margin-top: 16px;
+}
+
+#tutorialContent {
+  margin: 16px;
+  text-align: center;
+}
+
+#tutorialButtons {
+  padding: 32px 16px;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }

@@ -2,13 +2,16 @@
     <kite-grid-cell col="3"/>
     <kite-grid-cell col="6">
         <app-toolbar></app-toolbar>
-        <div id="tutorialContent">
+        <div id="tutorialAnimation">
             <app-lottie [lottie]="lottie" [parentSubject]="lottieSubject" height="300px" width="300px"></app-lottie>
         </div>
-        <div><h5>{{title}}</h5></div>
-        <div>{{body}}</div>
-        <kite-button (click)="next()">Next</kite-button>
-
+        <div id="tutorialContent">
+            <div><h5>{{title}}</h5></div>
+            <div>{{body}}</div>
+        </div>
+        <div id="tutorialButtons">
+            <kite-button (click)="next()">Next</kite-button>
+        </div>
     </kite-grid-cell>
     <kite-grid-cell col="3"/>
 </kite-grid>

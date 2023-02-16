@@ -6,8 +6,11 @@ import {
   LottieAction,
 } from '../lottie/lottie.component';
 import {
+  AnimationData,
+  CharterAnimationSegment,
   EquipmentType,
   SelfInstallTutorialServiceService,
+  TutorialData,
 } from '../services/self-install-tutorial-service.service';
 import { ActivatedRoute } from '@angular/router';
 import { AnimationSegment } from 'lottie-web';
@@ -25,24 +28,35 @@ export class TutorialPageComponent implements OnInit {
   lottieSubject = new Subject<LottieAction>();
   title = '';
   body = '';
-  equipment = {};
+  equipmentTypeString = '';
   constructor(
     private route: ActivatedRoute,
     private service: SelfInstallTutorialServiceService
   ) {}
 
   ngOnInit(): void {
-    this.equipment = this.route.snapshot.paramMap.get('equipmentType');
-    this.animationData = this.service.getAnimationFor(EquipmentType.Modem);
-    this.lottie = new TutorialAnimation(this.animationData.animation);
-    this.title = this.animationData.segments[0].title;
-    this.body = this.animationData.segments[0].body;
+    this.equipmentTypeString =
+      this.route.snapshot.paramMap.get('equipmentType');
+    switch (this.equipmentTypeString) {
+      case 'modem':
+        this.animationData = this.service.getAnimationFor(EquipmentType.Modem);
+        break;
+      case 'router':
+        this.animationData = this.service.getAnimationFor(EquipmentType.Router);
+        break;
+      case 'stb':
+        this.animationData = this.service.getAnimationFor(EquipmentType.Stb);
+        break;
+    }
+    this.lottie = new TutorialAnimation(this.animationData);
+    this.title = this.animationData.segments[this.currentSegment].title;
+    this.body = this.animationData.segments[this.currentSegment].body;
   }
 
   next(): void {
     if (this.currentSegment < this.animationData.segments.length - 1) {
       this.currentSegment++;
-      this.lottie = new TutorialAnimation(this.animationData.animation);
+
       this.title = this.animationData.segments[this.currentSegment].title;
       this.body = this.animationData.segments[this.currentSegment].body;
     }
@@ -51,14 +65,13 @@ export class TutorialPageComponent implements OnInit {
 
 export class TutorialAnimation implements ICharterLottie {
   source = '';
-  segments: AnimationSegment[] = [
-    [0, 100],
-    [100, 200],
-    [200, 294],
-  ];
+  segments: AnimationSegment[] = [];
 
-  constructor(animationFile: string) {
-    this.source = animationFile;
-    console.log(animationFile);
+  constructor(animationData: AnimationData) {
+    this.source = animationData.animation;
+    animationData.segments.forEach((segment) => {
+      console.log(this);
+      this.segments.push([segment.startFrameIndex, segment.endFrameIndex]);
+    });
   }
 }

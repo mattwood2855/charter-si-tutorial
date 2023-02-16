@@ -59,6 +59,7 @@ export class TutorialPageComponent implements OnInit {
 
       this.title = this.animationData.segments[this.currentSegment].title;
       this.body = this.animationData.segments[this.currentSegment].body;
+      this.lottieSubject.next('PLAY');
     }
   }
 }

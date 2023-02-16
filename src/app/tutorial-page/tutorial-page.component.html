@@ -1,7 +1,7 @@
 <kite-grid>
     <kite-grid-cell col="3"/>
     <kite-grid-cell col="6">
-        <app-toolbar></app-toolbar>
+        <app-toolbar (backClickedEvent) = "back()"></app-toolbar>
         <div id="tutorialAnimation">
             <app-lottie [lottie]="lottie" [parentSubject]="lottieSubject" height="300px" width="300px"></app-lottie>
         </div>

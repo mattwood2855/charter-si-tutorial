@@ -12,7 +12,7 @@ import {
   SelfInstallTutorialServiceService,
   TutorialData,
 } from '../services/self-install-tutorial-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AnimationSegment } from 'lottie-web';
 
 @Component({
@@ -31,6 +31,7 @@ export class TutorialPageComponent implements OnInit {
   equipmentTypeString = '';
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private service: SelfInstallTutorialServiceService
   ) {}
 
@@ -51,6 +52,17 @@ export class TutorialPageComponent implements OnInit {
     this.lottie = new TutorialAnimation(this.animationData);
     this.title = this.animationData.segments[this.currentSegment].title;
     this.body = this.animationData.segments[this.currentSegment].body;
+  }
+
+  back(): void {
+    if (this.currentSegment > 0) {
+      this.currentSegment--;
+
+      this.title = this.animationData.segments[this.currentSegment].title;
+      this.body = this.animationData.segments[this.currentSegment].body;
+    }
+    else
+      this.router.navigateByUrl('..');
   }
 
   next(): void {
